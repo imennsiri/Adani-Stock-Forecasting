@@ -1,5 +1,5 @@
 # Adani-Stock-Forecasting
-📦 Libraries Used
+#📦 Libraries Used
 python
 Copy
 Edit
@@ -26,7 +26,7 @@ Evaluation: mean_absolute_error
 
 Utilities: tqdm, warnings, os
 
-📁 Dataset
+#📁 Dataset
 File: adani.csv
 
 Columns:
@@ -39,7 +39,7 @@ dividends, stock_splits
 
 Shape: 39,332 rows × 10 columns
 
-📊 Exploratory Data Analysis (EDA)
+#📊 Exploratory Data Analysis (EDA)
 Summary statistics using df.describe()
 
 Checked for missing values
@@ -56,14 +56,14 @@ Candlestick charts using OHLC data
 
 Volume vs Close price relationship
 
-🛠 Feature Engineering
+#🛠 Feature Engineering
 Added 7-day moving average for close price:
 
 python
 Copy
 Edit
 df['Moving_Avg_Close'] = df['close'].rolling(window=7).mean()
-🧪 Data Preparation
+#🧪 Data Preparation
 Used only close price for univariate time series
 
 Scaled data using MinMaxScaler (range: 0 to 1)
@@ -74,7 +74,7 @@ Train-test split: 80% training, 20% testing
 
 Reshaped input for LSTM: (samples, time_steps=1, features=1)
 
-🧠 LSTM Model
+#🧠 LSTM Model
 python
 Copy
 Edit
@@ -100,7 +100,7 @@ Epochs: 30
 
 Trained using train_on_batch for precise control
 
-🔮 Prediction
+#🔮 Prediction
 Used the trained model to predict values on the test set
 
 Inverse-transformed predictions using scaler.inverse_transform
@@ -109,17 +109,17 @@ Saved predictions to predictions.csv
 
 Visualized predictions vs actual values using matplotlib
 
-📈 Results
+#📈 Results
 Mean Absolute Error (MAE): ~3.27
 
 Visual alignment between predicted and actual closing prices is good
 
 Predictions saved for future reference
 
-📁 Output Files
+#📁 Output Files
 predictions.csv: Contains timestamp and Predicted_Close
 
-✅ Future Improvements
+#✅ Future Improvements
 Use multivariate time series (include volume, high-low, etc.)
 
 Implement other models: ARIMA, GRU, XGBoost
@@ -130,5 +130,5 @@ Use early stopping, dropout, or bidirectional LSTMs
 
 Forecast multiple steps ahead (not just one day)
 
-🧠 Final Notes
+#🧠 Final Notes
 This project demonstrates the potential of LSTM models for financial time series forecasting. While it's a basic univariate setup, it opens the door to more complex applications involving multiple stocks, macroeconomic indicators, or sentiment analysis.
