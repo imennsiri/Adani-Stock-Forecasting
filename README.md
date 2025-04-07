@@ -39,6 +39,9 @@ dividends, stock_splits
 
 Shape: 39,332 rows × 10 columns
 
+Source: kaggle
+https://www.kaggle.com/datasets/swaptr/adani-stocks/data
+
 ## 📊 Exploratory Data Analysis (EDA)
 Summary statistics using df.describe()
 
